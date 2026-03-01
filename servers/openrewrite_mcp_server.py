@@ -72,14 +72,7 @@ RUNS_DIR = os.path.join(REWRITE_DIR, "runs")
 REWRITE_MAVEN_PLUGIN = "org.openrewrite.maven:rewrite-maven-plugin:5.45.0"
 REWRITE_RECIPE_BOM = "org.openrewrite.recipe:rewrite-recipe-bom:2.22.0"
 
-mcp = FastMCP(
-    "OpenRewrite Migration",
-    description=(
-        "AST-level code transformation via OpenRewrite. "
-        "Discover recipes, dry-run transformations, execute migrations, "
-        "and validate results with exact Java AST parsing."
-    ),
-)
+mcp = FastMCP("OpenRewrite Migration")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
