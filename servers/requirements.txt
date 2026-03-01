@@ -1,0 +1,28 @@
+# MCP Migration Platform — Python Dependencies
+# ==============================================
+#
+# Core (required by all servers):
+fastmcp>=0.1.0
+pyyaml>=6.0
+
+# Template Engine (required by servers 5, 7):
+jinja2>=3.1.0
+
+# MongoDB backend (optional — for containerized/team deployment):
+pymongo>=4.6.0
+
+# Redis caching (optional — for containerized deployment with caching):
+redis>=5.0.0
+
+# ==============================================
+# Install all:
+#   pip install -r requirements.txt
+#
+# Install minimal (local dev, no MongoDB/Redis):
+#   pip install fastmcp pyyaml jinja2
+#
+# System requirements:
+#   - Python 3.10+
+#   - JDK 17+ (for jar-scanner, openrewrite, test-quality servers)
+#   - Git (for codebase-intel ownership scanning)
+#   - Maven or Gradle (for openrewrite and test-quality servers)
