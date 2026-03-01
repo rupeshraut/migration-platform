@@ -42,13 +42,7 @@ VALIDATION_DIR = os.path.join(KB_DIR, "validation")
 TRACKING_FILE = os.path.join(VALIDATION_DIR, "_tracking.json")
 REPORTS_DIR = os.path.join(VALIDATION_DIR, "reports")
 
-mcp = FastMCP(
-    "Migration Validator",
-    description=(
-        "Validates KB freshness, generated code quality, mapping rule coverage, "
-        "convention compliance, and tracks migration progress org-wide."
-    ),
-)
+mcp = FastMCP("Migration Validator")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Shared KB Readers

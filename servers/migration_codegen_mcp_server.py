@@ -72,13 +72,7 @@ TARGET_FWK_FILE = os.path.join(KB_STORAGE_DIR, "_target_framework.json")
 # MCP Server
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-mcp = FastMCP(
-    "Migration Code Generator",
-    description=(
-        "Scans your in-house target framework, builds mapping rules between "
-        "legacy and target patterns, and generates migration code."
-    ),
-)
+mcp = FastMCP("Migration Code Generator")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Data Models

@@ -38,14 +38,7 @@ from fastmcp import FastMCP
 # MCP Server
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-mcp = FastMCP(
-    "Spring Boot Legacy Scanner",
-    description=(
-        "Scans Spring Boot applications to extract bean wiring, "
-        "DAO-Service relationships, configuration, and generates "
-        "migration plans for event-driven architecture modernization."
-    ),
-)
+mcp = FastMCP("Spring Boot Legacy Scanner")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Data Models

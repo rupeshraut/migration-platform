@@ -102,13 +102,7 @@ FIXTURES_DIR = os.path.join(REWRITE_DIR, "test-fixtures")
 CONFIGS_DIR = os.path.join(REWRITE_DIR, "configs")
 RECIPE_INDEX = os.path.join(RECIPES_DIR, "_recipe_index.json")
 
-mcp = FastMCP(
-    "OpenRewrite Recipe Manager",
-    description=(
-        "Author, test, compose, and manage OpenRewrite recipes. "
-        "Supports YAML declarative, Java imperative, and Refaster template recipes."
-    ),
-)
+mcp = FastMCP("OpenRewrite Recipe Manager")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

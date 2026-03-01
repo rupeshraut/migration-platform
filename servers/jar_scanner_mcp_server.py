@@ -39,13 +39,7 @@ from fastmcp import FastMCP
 # MCP Server Definition
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-mcp = FastMCP(
-    "Legacy JAR Scanner",
-    description=(
-        "Scans Java JAR files to extract class metadata, dependency graphs, "
-        "and DAO-to-Service layer relationships for legacy app migration."
-    ),
-)
+mcp = FastMCP("Legacy JAR Scanner")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Data Models

@@ -69,14 +69,7 @@ INTEL_DIR = os.path.join(KB_DIR, "codebase-intel")
 REPOS_INDEX = os.path.join(INTEL_DIR, "_repos.json")
 GRAPH_DIR = os.path.join(INTEL_DIR, "graphs")
 
-mcp = FastMCP(
-    "Codebase Intelligence",
-    description=(
-        "Indexes your codebase into a searchable knowledge graph. "
-        "Answers who-owns-what, what-calls-what, blast radius, "
-        "architecture diagrams, and dead code detection."
-    ),
-)
+mcp = FastMCP("Codebase Intelligence")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

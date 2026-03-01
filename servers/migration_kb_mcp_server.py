@@ -90,13 +90,7 @@ LOCAL_KB_DIR = os.path.expanduser("~/.mcp-migration-kb")
 # MCP Server
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-mcp = FastMCP(
-    "Migration Knowledge Base",
-    description=(
-        "Persistent knowledge base for cross-project Java migration analysis. "
-        f"Storage backend: {STORAGE_BACKEND}."
-    ),
-)
+mcp = FastMCP("Migration Knowledge Base")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Data Models (unchanged from v1)

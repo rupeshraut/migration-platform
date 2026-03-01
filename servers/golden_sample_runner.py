@@ -62,14 +62,7 @@ GOLDEN_DIR = os.path.join(KB_DIR, "golden-samples")
 GOLDEN_INDEX = os.path.join(GOLDEN_DIR, "_golden_index.json")
 TEMPLATES_DIR = os.path.join(KB_DIR, "templates")
 
-mcp = FastMCP(
-    "Golden Sample Runner",
-    description=(
-        "Manages architect-approved reference migrations and validates "
-        "that mapping rules and templates produce correct output. "
-        "The primary accuracy gate for the migration pipeline."
-    ),
-)
+mcp = FastMCP("Golden Sample Runner")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -94,14 +94,7 @@ GENERATOR_VERSION = "2.0.0"
 # MCP Server
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-mcp = FastMCP(
-    "Migration Template Engine",
-    description=(
-        "Custom code generation template engine for migration. "
-        "Define your own .tpl templates with Jinja2 syntax, "
-        "map them to legacy patterns, and generate framework-specific code."
-    ),
-)
+mcp = FastMCP("Migration Template Engine")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Data Models

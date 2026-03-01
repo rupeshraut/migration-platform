@@ -161,13 +161,7 @@ DEFAULT_CONFIG = {
     "pit_timeout_constant": 3000,
 }
 
-mcp = FastMCP(
-    "Test Quality & Mutation Coverage",
-    description=(
-        "Analyzes mutation coverage gaps, prioritizes by business risk, "
-        "generates meaningful behavioral tests, and validates with PIT mutation testing."
-    ),
-)
+mcp = FastMCP("Test Quality & Mutation Coverage")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
