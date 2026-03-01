@@ -1,0 +1,36 @@
+{
+  "servers": {
+    "springboot_scanner_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/springboot_scanner_mcp_server.py"]
+    },
+    "codebase_intel_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/codebase_intel_mcp_server.py"]
+    },
+    "jar_scanner_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/jar_scanner_mcp_server.py"]
+    },
+    "migration_codegen_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/migration_codegen_mcp_server.py"]
+    },
+    "migration_kb_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/migration_kb_mcp_server.py"]
+    },
+    "migration_validator_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/migration_validator_mcp_server.py"]
+    },
+    "openrewrite_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/openrewrite_mcp_server.py"]
+    },
+    "test_quality_mcp_server": {
+      "command": "/Users/rpraut/Documents/ai-workspace/migration-platform/.venv/bin/python",
+      "args": ["/Users/rpraut/Documents/ai-workspace/migration-platform/servers/test_quality_mcp_server.py"]
+    }
+  }
+}
