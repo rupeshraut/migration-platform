@@ -1190,6 +1190,114 @@ def migration_landscape_report() -> dict:
 
 
 @mcp.tool()
+def add_class_note(class_name: str, note: str, author: str = "AI") -> dict:
+    """
+    Add a custom note/annotation to a class in the knowledge base.
+
+    Args:
+        class_name: Fully qualified class name or simple name
+        note: The note text to add
+        author: Who added the note (default: AI)
+    """
+    record = storage.get_class(class_name)
+    if not record:
+        results = storage.search_classes(class_name)
+        exact = [r for r in results if r.get("simple_name") == class_name]
+        if len(exact) == 1:
+            record = exact[0]
+        elif exact:
+            return {"error": "Ambiguous", "matches": [r.get("fqcn") for r in exact]}
+        else:
+            return {"error": f"'{class_name}' not found."}
+
+    from datetime import datetime
+    timestamp = datetime.now().isoformat()
+    annotated_note = f"[{timestamp}] [{author}] {note}"
+
+    if "migration_notes" not in record:
+        record["migration_notes"] = []
+    record["migration_notes"].append(annotated_note)
+
+    project_name = record.get("project")
+    all_classes = storage.get_classes_by_project(project_name)
+    all_classes[record["fqcn"]] = record
+    storage.save_classes(project_name, all_classes)
+
+    return {
+        "status": "note_added",
+        "class": record["fqcn"],
+        "total_notes": len(record["migration_notes"]),
+        "note": annotated_note,
+    }
+
+
+@mcp.tool()
+def remove_class_note(class_name: str, note_index: int) -> dict:
+    """
+    Remove a note from a class by index.
+
+    Args:
+        class_name: Fully qualified class name or simple name
+        note_index: Index of the note to remove (0-based)
+    """
+    record = storage.get_class(class_name)
+    if not record:
+        results = storage.search_classes(class_name)
+        exact = [r for r in results if r.get("simple_name") == class_name]
+        if len(exact) == 1:
+            record = exact[0]
+        else:
+            return {"error": f"'{class_name}' not found or ambiguous."}
+
+    notes = record.get("migration_notes", [])
+    if not notes:
+        return {"error": "No notes found for this class."}
+    if note_index < 0 or note_index >= len(notes):
+        return {"error": f"Invalid index. Class has {len(notes)} note(s) (0-based)."}
+
+    removed = notes.pop(note_index)
+    record["migration_notes"] = notes
+
+    project_name = record.get("project")
+    all_classes = storage.get_classes_by_project(project_name)
+    all_classes[record["fqcn"]] = record
+    storage.save_classes(project_name, all_classes)
+
+    return {
+        "status": "note_removed",
+        "class": record["fqcn"],
+        "removed_note": removed,
+        "remaining_notes": len(notes),
+    }
+
+
+@mcp.tool()
+def get_class_notes(class_name: str) -> dict:
+    """
+    Get all custom notes for a class.
+
+    Args:
+        class_name: Fully qualified class name or simple name
+    """
+    record = storage.get_class(class_name)
+    if not record:
+        results = storage.search_classes(class_name)
+        exact = [r for r in results if r.get("simple_name") == class_name]
+        if len(exact) == 1:
+            record = exact[0]
+        else:
+            return {"error": f"'{class_name}' not found or ambiguous."}
+
+    notes = record.get("migration_notes", [])
+    return {
+        "class": record["fqcn"],
+        "project": record.get("project"),
+        "total_notes": len(notes),
+        "notes": notes,
+    }
+
+
+@mcp.tool()
 def storage_info() -> dict:
     """Show storage backend configuration and health."""
     return storage.get_storage_info()
